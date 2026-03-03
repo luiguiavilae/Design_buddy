@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "brand": "BCP – Banco de Crédito del Perú",
+    "pillars": ["simple", "cercana", "oportuna"],
+    "purpose": "Ser aliados de nuestros clientes para transformar sus planes en realidad."
+  },
+  "forbidden": [
+    { "term": "estimado cliente",              "fix": "Eliminar. Ir directo al mensaje." },
+    { "term": "estimada clienta",              "fix": "Eliminar. Ir directo al mensaje." },
+    { "term": "estimado usuario",              "fix": "Eliminar. Ir directo al mensaje." },
+    { "term": "le informamos",                 "fix": "Usar segunda persona directa." },
+    { "term": "nos complace informarle",       "fix": "Ir directo al punto." },
+    { "term": "nos complace",                  "fix": "Ir directo al punto." },
+    { "term": "disculpe los inconvenientes",   "fix": "Reconocer el problema específico + acción." },
+    { "term": "lamentamos los inconvenientes", "fix": "Reconocer el problema específico + acción." },
+    { "term": "a la brevedad posible",         "fix": "Dar tiempo específico: 'en 24 horas', 'antes de las 6 p.m.'" },
+    { "term": "a la mayor brevedad",           "fix": "Dar tiempo específico." },
+    { "term": "operación procesada satisfactoriamente", "fix": "'Listo.' / 'Enviado.' / 'Pagado.'" },
+    { "term": "transacción exitosa",           "fix": "'Transferencia enviada.' / 'Pago realizado.'" },
+    { "term": "haz clic aquí",                 "fix": "Describir la acción: 'Ver movimientos', 'Pagar ahora'." },
+    { "term": "click aquí",                    "fix": "Describir la acción." },
+    { "term": "ver más",                       "fix": "'Ver todos tus movimientos' / 'Ver beneficios'." },
+    { "term": "saber más",                     "fix": "'Conoce cómo funciona' / 'Descubre los beneficios'." },
+    { "term": "en el marco de",                "fix": "Eliminar. Reescribir." },
+    { "term": "cabe mencionar que",            "fix": "Eliminar. Decir directamente." },
+    { "term": "usted",                         "fix": "Usar 'tú'. BCP tutea en todos sus canales digitales." },
+    { "term": "su cuenta",                     "fix": "'tu cuenta'" },
+    { "term": "su tarjeta",                    "fix": "'tu tarjeta'" },
+    { "term": "el usuario debe",               "fix": "Segunda persona: 'Ingresa', 'Confirma', 'Selecciona'." },
+    { "term": "el cliente debe",               "fix": "Segunda persona directa." },
+    { "term": "el titular debe",               "fix": "Segunda persona directa." },
+    { "term": "bcp te ofrece",                 "fix": "El usuario es el protagonista, no el banco." },
+    { "term": "bcp te brinda",                 "fix": "El usuario es el protagonista, no el banco." },
+    { "term": "nuestro banco",                 "fix": "Hablar desde el usuario, no desde la institución." },
+    { "term": "nuestra institución",           "fix": "Hablar desde el usuario." },
+    { "term": "te brindamos",                  "fix": "Reescribir centrado en el usuario." },
+    { "term": "ponemos a tu disposición",      "fix": "Iniciar con el beneficio: 'Accede a...', 'Elige...'" }
+  ],
+  "passiveVoice": [
+    "ha sido procesad",
+    "ha sido acreditad",
+    "ha sido enviad",
+    "ha sido realizad",
+    "ha sido completad",
+    "fue procesad",
+    "fue acreditad",
+    "fue realizad",
+    "será efectuad",
+    "será notificad",
+    "se ha completad",
+    "se encuentra disponible",
+    "se realizará el"
+  ],
+  "bankJargon": [
+    { "term": "acreditación",          "fix": "devolución / depósito" },
+    { "term": "extorno",               "fix": "devolución" },
+    { "term": "débito automático",     "fix": "cobro automático" },
+    { "term": "disposición de fondos", "fix": "dinero disponible" },
+    { "term": "saldo contable",        "fix": "saldo en tu cuenta" },
+    { "term": "cargo en cuenta",       "fix": "cobro a tu cuenta" },
+    { "term": "abono en cuenta",       "fix": "depósito en tu cuenta" },
+    { "term": "tcea",                  "fix": "Acompañar de explicación o solo usar en ficha de producto." },
+    { "term": "trea",                  "fix": "Acompañar de explicación o solo usar en ficha de producto." },
+    { "term": "cci",                   "fix": "Explicar al primer uso: 'CCI (código de cuenta interbancario)'." }
+  ],
+  "falseUrgency": [
+    "¡actúa ya",
+    "¡no te lo pierdas",
+    "¡última oportunidad",
+    "¡solo por hoy",
+    "¡oferta limitada",
+    "¡corre",
+    "¡apresúrate",
+    "no pierdas esta oportunidad"
+  ],
+  "errorMessageRules": {
+    "description": "Todo mensaje de error necesita: (1) qué pasó y (2) qué puede hacer el usuario.",
+    "incompletePatterns": [
+      "^error\\.",
+      "^ocurrió un error",
+      "^algo salió mal",
+      "^servicio no disponible",
+      "^operación fallida",
+      "^intenta de nuevo más tarde$",
+      "^no se pudo completar\\.$"
+    ],
+    "actionPhrases": [
+      "revisa", "intenta", "ingresa", "llama", "ve a", "comunícate",
+      "puedes", "visita", "usa", "escríbenos", "espera hasta", "ir a"
+    ]
+  },
+  "lengthLimits": {
+    "cta_button":    { "maxWords": 4,  "maxChars": 30  },
+    "label":         { "maxWords": 3,  "maxChars": 25  },
+    "placeholder":   { "maxWords": 6,  "maxChars": 40  },
+    "tooltip":       { "maxWords": 15, "maxChars": 90  },
+    "error_message": { "maxWords": 20, "maxChars": 120 },
+    "title":         { "maxWords": 8,  "maxChars": 55  },
+    "subtitle":      { "maxWords": 15, "maxChars": 90  },
+    "notification":  { "maxWords": 18, "maxChars": 110 }
+  },
+  "componentTypeMap": {
+    "button":       "cta_button",
+    "btn":          "cta_button",
+    "cta":          "cta_button",
+    "label":        "label",
+    "input":        "placeholder",
+    "placeholder":  "placeholder",
+    "tooltip":      "tooltip",
+    "hint":         "tooltip",
+    "error":        "error_message",
+    "alert":        "error_message",
+    "title":        "title",
+    "heading":      "title",
+    "headline":     "title",
+    "subtitle":     "subtitle",
+    "notification": "notification",
+    "push":         "notification",
+    "toast":        "notification"
+  }
+}

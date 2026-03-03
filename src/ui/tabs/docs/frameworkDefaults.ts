@@ -1,0 +1,62 @@
+import type { Page } from '../../../types/docs'
+
+export const FRAMEWORK_DEFAULTS: Page[] = [
+  {
+    id: 'cover',
+    name: 'Cover',
+    isRequired: true,
+    isEnabled: true,
+    order: 0,
+    sections: [],
+  },
+  {
+    id: 'estructura-archivo',
+    name: '01. Estructura del archivo',
+    isRequired: true,
+    isEnabled: true,
+    separatorBefore: true,
+    order: 1,
+    sections: [],
+    subPages: ['📜 Project Information', '🔍 Changelog'],
+  },
+  {
+    id: 'user-flows',
+    name: '02. User flows',
+    isRequired: false,
+    isEnabled: true,
+    separatorBefore: true,
+    order: 2,
+    sections: [],
+    subPages: ['⚙️ [Nombre del proceso de negocio]'],
+  },
+  {
+    id: 'final-design',
+    name: '03. Final Design - Alta fidelidad',
+    isRequired: false,
+    isEnabled: true,
+    separatorBefore: true,
+    order: 3,
+    sections: [],
+  },
+  {
+    id: 'final-design-device',
+    name: '📱 {projectName} - Dispositivo',
+    isRequired: false,
+    isEnabled: true,
+    isDevicePage: true,
+    order: 4,
+    sections: [
+      { id: 'fd-sec-1', name: '01. Pantalla', isRequired: false, order: 0 },
+    ],
+  },
+  {
+    id: 'componentes',
+    name: '04. Componentes',
+    isRequired: true,
+    isEnabled: true,
+    separatorBefore: true,
+    order: 5,
+    sections: [],
+    subPages: ['❖ Local components'],
+  },
+]
