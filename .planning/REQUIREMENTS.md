@@ -9,12 +9,12 @@
 
 ### Tracking Module (Designer Buddy)
 
-- [ ] **TRACK-01**: Al terminar una evaluacion de handoff, se registra automaticamente un evento con fileId, fileName, pageName, userName, overallScore y timestamp
-- [ ] **TRACK-02**: El tracking no bloquea ni retrasa el flujo del disenador (fire-and-forget puro)
-- [ ] **TRACK-03**: Si el tracking falla (red, CORS, endpoint no configurado), el plugin sigue funcionando sin errores visibles al usuario
-- [ ] **TRACK-04**: El payload incluye `figma.currentUser.name` como userName (requiere permiso `currentuser` en manifest)
-- [ ] **TRACK-05**: El payload incluye `figma.fileKey` como fileId (requiere `enablePrivatePluginApi` en manifest)
-- [ ] **TRACK-06**: El manifest.json tiene `networkAccess.allowedDomains` con el dominio del endpoint de Power Automate
+- [x] **TRACK-01**: Al terminar una evaluacion de handoff, se registra automaticamente un evento con fileId, fileName, pageName, userName, overallScore y timestamp
+- [x] **TRACK-02**: El tracking no bloquea ni retrasa el flujo del disenador (fire-and-forget puro)
+- [x] **TRACK-03**: Si el tracking falla (red, CORS, endpoint no configurado), el plugin sigue funcionando sin errores visibles al usuario
+- [x] **TRACK-04**: El payload incluye `figma.currentUser.name` como userName (requiere permiso `currentuser` en manifest)
+- [x] **TRACK-05**: El payload incluye `figma.fileKey` como fileId (requiere `enablePrivatePluginApi` en manifest)
+- [x] **TRACK-06**: El manifest.json tiene `networkAccess.allowedDomains` con el dominio del endpoint de Power Automate
 
 ### Analytics Plugin — Data Layer
 
@@ -36,7 +36,7 @@
 ### Setup y Operaciones
 
 - [ ] **OPS-01**: Existe un runbook de operaciones documentado para el equipo BCP (owner del flow, heartbeat cada 30 dias, rotacion de URL)
-- [ ] **OPS-02**: Las constantes `TRACKING_ENDPOINT_URL` y `ANALYTICS_READ_URL` estan en la parte superior de sus archivos con comentario claro; no estan hardcodeadas en el repo publico
+- [x] **OPS-02**: Las constantes `TRACKING_ENDPOINT_URL` y `ANALYTICS_READ_URL` estan en la parte superior de sus archivos con comentario claro; no estan hardcodeadas en el repo publico
 
 ---
 
@@ -76,14 +76,14 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TRACK-01 | Phase 1 | Pending |
-| TRACK-02 | Phase 1 | Pending |
-| TRACK-03 | Phase 1 | Pending |
-| TRACK-04 | Phase 1 | Pending |
-| TRACK-05 | Phase 1 | Pending |
-| TRACK-06 | Phase 1 | Pending |
-| OPS-01 | Phase 1 | Pending |
-| OPS-02 | Phase 1 | Pending |
+| TRACK-01 | Phase 1 | Complete (01-01) |
+| TRACK-02 | Phase 1 | Complete (01-01) |
+| TRACK-03 | Phase 1 | Complete (01-01) |
+| TRACK-04 | Phase 1 | Complete (01-01) |
+| TRACK-05 | Phase 1 | Complete (01-01) |
+| TRACK-06 | Phase 1 | Complete (01-01) |
+| OPS-01 | Phase 1 | Pending (01-02) |
+| OPS-02 | Phase 1 | Complete (01-01) |
 | DATA-01 | Phase 2 | Pending |
 | DATA-02 | Phase 2 | Pending |
 | DATA-03 | Phase 2 | Pending |
@@ -103,4 +103,4 @@
 
 ---
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-05 — initial definition from research*
+*Last updated: 2026-03-06 — TRACK-01..06 and OPS-02 marked complete after 01-01*

@@ -13,16 +13,36 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 
 **Phase:** 1 of 3
 **Phase name:** Tracking Module en Designer Buddy
-**Phase status:** Not started — ready to plan
+**Phase status:** In progress — Plan 1 of 1 complete
 
-**Last action:** Roadmap created (2026-03-05)
-**Next action:** `/gsd:plan-phase 1`
+**Current Plan:** 1 of 1
+**Last action:** Completed 01-01-PLAN.md (2026-03-06)
+**Next action:** Phase 1 complete — proceed to Phase 2
 
 ---
 
 ## Completed Phases
 
-(None yet)
+(None yet — Phase 1 in progress)
+
+---
+
+## Phase 1 Progress
+
+| Plan | Name | Status | Commit |
+|------|------|--------|--------|
+| 01-01 | Silent tracking module | Complete | 587d2d6 |
+
+---
+
+## Decisions
+
+- `timestamp` uses `report.evaluatedAt` not `new Date()` — ensures timestamp precision matches evaluation time
+- Error suppression uses `console.debug` not silent catch — devs see tracking failures, designers don't
+- Plain object headers in fetch (no `Headers` constructor) — QuickJS in Figma sandbox compatibility
+- `TRACKING_ENDPOINT_URL` defaults to empty string — safe no-op in development
+- `*.api.powerplatform.com` in allowedDomains (not `*.logic.azure.com` — retired November 30, 2025)
+- `enablePrivatePluginApi: true` required for `figma.fileKey`; `permissions: currentuser` required for `figma.currentUser`
 
 ---
 
@@ -39,7 +59,9 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 | .planning/research/ARCHITECTURE.md | Done |
 | .planning/research/PITFALLS.md | Done |
 | .planning/research/SUMMARY.md | Done |
+| .planning/phases/01-tracking-module-en-designer-buddy/01-01-PLAN.md | Done |
+| .planning/phases/01-tracking-module-en-designer-buddy/01-01-SUMMARY.md | Done |
 
 ---
 *State initialized: 2026-03-05*
-*Last updated: 2026-03-05 after roadmap creation*
+*Last updated: 2026-03-06 after completing 01-01 (silent tracking module)*

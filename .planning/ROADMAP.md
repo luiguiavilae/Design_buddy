@@ -17,7 +17,7 @@
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — TrackingEvent type, tracking module, messageRouter wiring, manifest updates
+- [x] 01-01-PLAN.md — TrackingEvent type, tracking module, messageRouter wiring, manifest updates
 - [ ] 01-02-PLAN.md — RUNBOOK.md for BCP team operations
 
 **Deliverables:**
@@ -154,13 +154,13 @@ Plans:
 
 ## Phase Status
 
-| Phase | Name | Requirements | Status |
-|-------|------|--------------|--------|
-| 1 | Tracking Module en Designer Buddy | TRACK-01..06, OPS-01..02 | Planned |
-| 2 | Analytics Plugin — Handoff Analytics | DATA-01..05, DASH-01..06 | Pending |
-| 3 | Mejoras Post-Validacion | V2-01..05 | Pending |
+| Phase | Name | Requirements | Status | Plans |
+|-------|------|--------------|--------|-------|
+| 1 | Tracking Module en Designer Buddy | TRACK-01..06, OPS-01..02 | In progress | 1/2 complete |
+| 2 | Analytics Plugin — Handoff Analytics | DATA-01..05, DASH-01..06 | Pending | 0/? |
+| 3 | Mejoras Post-Validacion | V2-01..05 | Pending | 0/? |
 
-**Progress:** ░░░░░░░░░░ 0%
+**Progress:** █░░░░░░░░░ ~10% (Phase 1 Plan 1 complete)
 
 ---
 
