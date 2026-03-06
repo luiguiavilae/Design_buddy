@@ -1,0 +1,12 @@
+{
+  "name": "Handoff Analytics",
+  "id": "handoff-analytics",
+  "api": "1.0.0",
+  "main": "dist/main.js",
+  "ui": "dist/ui.html",
+  "enablePrivatePluginApi": true,
+  "permissions": ["currentuser"],
+  "networkAccess": {
+    "allowedDomains": ["*.api.powerplatform.com"]
+  }
+}
