@@ -35,7 +35,7 @@
 
 ### Setup y Operaciones
 
-- [ ] **OPS-01**: Existe un runbook de operaciones documentado para el equipo BCP (owner del flow, heartbeat cada 30 dias, rotacion de URL)
+- [x] **OPS-01**: Existe un runbook de operaciones documentado para el equipo BCP (owner del flow, heartbeat cada 30 dias, rotacion de URL)
 - [x] **OPS-02**: Las constantes `TRACKING_ENDPOINT_URL` y `ANALYTICS_READ_URL` estan en la parte superior de sus archivos con comentario claro; no estan hardcodeadas en el repo publico
 
 ---
@@ -82,7 +82,7 @@
 | TRACK-04 | Phase 1 | Complete (01-01) |
 | TRACK-05 | Phase 1 | Complete (01-01) |
 | TRACK-06 | Phase 1 | Complete (01-01) |
-| OPS-01 | Phase 1 | Pending (01-02) |
+| OPS-01 | Phase 1 | Complete (01-02) |
 | OPS-02 | Phase 1 | Complete (01-01) |
 | DATA-01 | Phase 2 | Pending |
 | DATA-02 | Phase 2 | Pending |
@@ -103,4 +103,4 @@
 
 ---
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-06 — TRACK-01..06 and OPS-02 marked complete after 01-01*
+*Last updated: 2026-03-06 — OPS-01 marked complete after 01-02 (RUNBOOK.md created and approved by human reviewer)*
