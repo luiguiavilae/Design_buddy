@@ -14,6 +14,12 @@
 
 **Requirements cubiertos:** TRACK-01, TRACK-02, TRACK-03, TRACK-04, TRACK-05, TRACK-06, OPS-01, OPS-02
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — TrackingEvent type, tracking module, messageRouter wiring, manifest updates
+- [ ] 01-02-PLAN.md — RUNBOOK.md for BCP team operations
+
 **Deliverables:**
 
 1. `src/types/tracking.ts`
@@ -150,7 +156,7 @@
 
 | Phase | Name | Requirements | Status |
 |-------|------|--------------|--------|
-| 1 | Tracking Module en Designer Buddy | TRACK-01..06, OPS-01..02 | Pending |
+| 1 | Tracking Module en Designer Buddy | TRACK-01..06, OPS-01..02 | Planned |
 | 2 | Analytics Plugin — Handoff Analytics | DATA-01..05, DASH-01..06 | Pending |
 | 3 | Mejoras Post-Validacion | V2-01..05 | Pending |
 
@@ -166,4 +172,4 @@
 
 ---
 *Roadmap created: 2026-03-05*
-*Next action: /gsd:plan-phase 1*
+*Phase 1 planned: 2026-03-06 — 2 plans created*
