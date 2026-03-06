@@ -26,12 +26,12 @@
 
 ### Analytics Plugin — Dashboard UI
 
-- [ ] **DASH-01**: El lider puede ver una tabla de evaluaciones con: nombre de archivo, diseñador, fecha formateada (DD/MM/YYYY HH:mm), score
-- [ ] **DASH-02**: Cada score se muestra con color coding: rojo (<60), amarillo (60-80), verde (>80)
-- [ ] **DASH-03**: El dashboard muestra el contador total de evaluaciones
-- [ ] **DASH-04**: El lider puede filtrar la lista por diseñador mediante un dropdown
-- [ ] **DASH-05**: El lider puede filtrar la lista por rango de fechas con presets: ultima semana / ultimo mes / todo
-- [ ] **DASH-06**: El dashboard muestra el score promedio por diseñador (agrupacion en frontend)
+- [x] **DASH-01**: El lider puede ver una tabla de evaluaciones con: nombre de archivo, diseñador, fecha formateada (DD/MM/YYYY HH:mm), score
+- [x] **DASH-02**: Cada score se muestra con color coding: rojo (<60), amarillo (60-80), verde (>80)
+- [x] **DASH-03**: El dashboard muestra el contador total de evaluaciones
+- [x] **DASH-04**: El lider puede filtrar la lista por diseñador mediante un dropdown
+- [x] **DASH-05**: El lider puede filtrar la lista por rango de fechas con presets: ultima semana / ultimo mes / todo
+- [x] **DASH-06**: El dashboard muestra el score promedio por diseñador (agrupacion en frontend)
 
 ### Setup y Operaciones
 
@@ -89,12 +89,12 @@
 | DATA-03 | Phase 2 | Complete |
 | DATA-04 | Phase 2 | Complete |
 | DATA-05 | Phase 2 | Complete |
-| DASH-01 | Phase 2 | Pending |
-| DASH-02 | Phase 2 | Pending |
-| DASH-03 | Phase 2 | Pending |
-| DASH-04 | Phase 2 | Pending |
-| DASH-05 | Phase 2 | Pending |
-| DASH-06 | Phase 2 | Pending |
+| DASH-01 | Phase 2 | Complete |
+| DASH-02 | Phase 2 | Complete |
+| DASH-03 | Phase 2 | Complete |
+| DASH-04 | Phase 2 | Complete |
+| DASH-05 | Phase 2 | Complete |
+| DASH-06 | Phase 2 | Complete |
 
 **Coverage:**
 - v1 requirements: 19 total
