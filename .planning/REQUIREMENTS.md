@@ -18,11 +18,11 @@
 
 ### Analytics Plugin — Data Layer
 
-- [ ] **DATA-01**: El plugin recupera la lista de evaluaciones desde el endpoint de Power Automate Reader
-- [ ] **DATA-02**: El plugin muestra un loading state durante el fetch (que puede tardar 1-15s por cold start)
-- [ ] **DATA-03**: Si el endpoint no esta configurado o falla, el plugin muestra un error state informativo con instrucciones
-- [ ] **DATA-04**: Si no hay evaluaciones, el plugin muestra un empty state explicativo
-- [ ] **DATA-05**: El campo `overallScore` se parsea como entero (`parseInt`) antes de renderizar — Excel Online devuelve strings
+- [x] **DATA-01**: El plugin recupera la lista de evaluaciones desde el endpoint de Power Automate Reader
+- [x] **DATA-02**: El plugin muestra un loading state durante el fetch (que puede tardar 1-15s por cold start)
+- [x] **DATA-03**: Si el endpoint no esta configurado o falla, el plugin muestra un error state informativo con instrucciones
+- [x] **DATA-04**: Si no hay evaluaciones, el plugin muestra un empty state explicativo
+- [x] **DATA-05**: El campo `overallScore` se parsea como entero (`parseInt`) antes de renderizar — Excel Online devuelve strings
 
 ### Analytics Plugin — Dashboard UI
 
@@ -84,11 +84,11 @@
 | TRACK-06 | Phase 1 | Complete (01-01) |
 | OPS-01 | Phase 1 | Complete (01-02) |
 | OPS-02 | Phase 1 | Complete (01-01) |
-| DATA-01 | Phase 2 | Pending |
-| DATA-02 | Phase 2 | Pending |
-| DATA-03 | Phase 2 | Pending |
-| DATA-04 | Phase 2 | Pending |
-| DATA-05 | Phase 2 | Pending |
+| DATA-01 | Phase 2 | Complete |
+| DATA-02 | Phase 2 | Complete |
+| DATA-03 | Phase 2 | Complete |
+| DATA-04 | Phase 2 | Complete |
+| DATA-05 | Phase 2 | Complete |
 | DASH-01 | Phase 2 | Pending |
 | DASH-02 | Phase 2 | Pending |
 | DASH-03 | Phase 2 | Pending |

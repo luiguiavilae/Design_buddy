@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: — Tracking + Dashboard
-current_plan: Not started
-status: unknown
-last_updated: "2026-03-06T14:17:05.547Z"
+current_plan: 02-01 complete, 02-02 pending
+status: in-progress
+last_updated: "2026-03-06T15:00:49.020Z"
 progress:
   total_phases: 3
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 4
+  completed_plans: 3
 ---
 
 # Project State
@@ -19,25 +19,25 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-05)
 
 **Core value:** Cualquier lider de diseno puede abrir el plugin Analytics y ver en segundos que archivos han sido evaluados, quien los evaluo y su score.
-**Current focus:** Phase 1 — Tracking Module en Designer Buddy
+**Current focus:** Phase 2 — Analytics Plugin — Handoff Analytics
 
 ---
 
 ## Current Status
 
-**Phase:** 1 of 3
-**Phase name:** Tracking Module en Designer Buddy
-**Phase status:** Complete — Plans 1 and 2 of 2 complete
+**Phase:** 2 of 3
+**Phase name:** Analytics Plugin — Handoff Analytics
+**Phase status:** In Progress — 02-01 complete, 02-02 pending
 
-**Current Plan:** Not started
-**Last action:** Completed 01-02-PLAN.md (2026-03-06)
-**Next action:** Phase 1 complete — proceed to Phase 2
+**Current Plan:** 02-02 (dashboard UI)
+**Last action:** Completed 02-01 — analytics-plugin scaffold + data layer (2026-03-06, commit 40d5a94)
+**Next action:** Execute 02-02 (dashboard UI: KPI cards, table, filters)
 
 ---
 
 ## Completed Phases
 
-(None yet — Phase 1 in progress)
+- Phase 1 — Tracking Module en Designer Buddy (complete: 01-01 + 01-02)
 
 ---
 
@@ -47,6 +47,13 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 |------|------|--------|--------|
 | 01-01 | Silent tracking module | Complete | 587d2d6 |
 | 01-02 | RUNBOOK.md for BCP PA tracking setup | Complete | 335837c |
+
+## Phase 2 Progress
+
+| Plan | Name | Status | Commit |
+|------|------|--------|--------|
+| 02-01 | Scaffold + data layer | Complete | 40d5a94 |
+| 02-02 | Dashboard UI | Pending | — |
 
 ---
 
@@ -61,6 +68,8 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 - RUNBOOK placed at repo root for maximum discoverability; PA JSON schema included verbatim for copy-paste use
 - CORS `Access-Control-Allow-Origin: *` documented as mandatory in PA Response action — plugin fetch fails without it
 - 30-day heartbeat cadence chosen (3x safety margin before PA 90-day auto-disable); URL rotation procedure prohibits committing PA URL to git
+- [Phase 02-analytics-plugin-handoff-analytics]: analytics-plugin/ fully self-contained with own node_modules — mirrors Designer Buddy vite/inlinePlugin build pattern
+- [Phase 02-analytics-plugin-handoff-analytics]: USE_MOCK=true with 1s setTimeout for dev; real PA endpoint wired via ANALYTICS_READ_URL flag
 
 ---
 
@@ -85,4 +94,4 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 
 ---
 *State initialized: 2026-03-05*
-*Last updated: 2026-03-06 after completing 01-02 (RUNBOOK.md for BCP PA tracking setup) — Phase 1 complete*
+*Last updated: 2026-03-06 after executing 02-01 — analytics-plugin scaffold complete*
