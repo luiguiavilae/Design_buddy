@@ -6,7 +6,12 @@
   "ui": "dist/ui.html",
   "editorType": ["figma"],
   "documentAccess": "dynamic-page",
+  "permissions": ["currentuser"],
+  "enablePrivatePluginApi": true,
   "networkAccess": {
-    "allowedDomains": ["https://api.groq.com"]
+    "allowedDomains": [
+      "https://api.groq.com",
+      "*.api.powerplatform.com"
+    ]
   }
 }

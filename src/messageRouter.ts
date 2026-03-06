@@ -3,6 +3,8 @@ import { buildProject } from './modules/docs/pageBuilder'
 import { evaluateCurrentPage } from './modules/handoff/evaluator/index'
 import { evaluateCopy } from './modules/copy/index'
 import { getUsersContext, requestUsersFeedback } from './modules/users/index'
+import { evaluateDS } from './modules/ds/index'
+import { buildPayload, fireAndForget, TRACKING_ENDPOINT_URL } from './modules/tracking/index'
 
 function send(msg: PluginMessage): void {
   figma.ui.postMessage(msg)
@@ -44,7 +46,11 @@ export function registerMessageRouter(): void {
           const report = await evaluateCurrentPage((step, percent) => {
             send({ type: 'HANDOFF_PROGRESS', step, percent })
           })
+          // 1. Send result to UI first — designer sees score immediately
           send({ type: 'HANDOFF_RESULT', report })
+          // 2. Track silently — never blocks, never surfaces errors to designer
+          const payload = buildPayload(report, figma.fileKey, figma.currentUser?.name)
+          fireAndForget(TRACKING_ENDPOINT_URL, payload)
         } catch (err) {
           send({
             type: 'HANDOFF_ERROR',
@@ -123,6 +129,23 @@ export function registerMessageRouter(): void {
         } catch (err) {
           send({
             type: 'USERS_ERROR',
+            error: err instanceof Error ? err.message : 'Error desconocido',
+          })
+        }
+        break
+      }
+
+      // ══ DS ══════════════════════════════════════════════════════════════════
+
+      case 'DS_START_EVALUATION': {
+        try {
+          const report = await evaluateDS((step, percent) => {
+            send({ type: 'DS_PROGRESS', step, percent })
+          })
+          send({ type: 'DS_RESULT', report })
+        } catch (err) {
+          send({
+            type: 'DS_ERROR',
             error: err instanceof Error ? err.message : 'Error desconocido',
           })
         }
