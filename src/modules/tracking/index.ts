@@ -1,8 +1,4 @@
-// Configure this constant with your Power Automate HTTP trigger URL before deploying.
-// See RUNBOOK.md for step-by-step setup instructions.
-// Leave empty ('') during development — fetch will fail silently without impacting users.
-export const TRACKING_ENDPOINT_URL = ''
-
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../../config/tracking'
 import type { EvaluationReport } from '../../types/handoff'
 import type { TrackingEvent } from '../../types/tracking'
 
@@ -21,13 +17,27 @@ export function buildPayload(
   }
 }
 
-export function fireAndForget(url: string, payload: TrackingEvent): void {
+export function fireAndForget(payload: TrackingEvent): void {
+  if (SUPABASE_URL === 'REPLACE_ME') return
+
+  const body = JSON.stringify({
+    file_id:       payload.fileId,
+    file_name:     payload.fileName,
+    user_name:     payload.userName,
+    timestamp:     payload.timestamp,
+    overall_score: payload.overallScore,
+  })
+
   // Intentionally not awaited — tracking never blocks the caller.
-  fetch(url, {
+  fetch(`${SUPABASE_URL}/rest/v1/evaluations`, {
     method:  'POST',
-    headers: { 'Content-Type': 'application/json' },   // plain object — QuickJS has no Headers constructor
-    body:    JSON.stringify(payload),
+    headers: {
+      'apikey':        SUPABASE_ANON_KEY,
+      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+      'Content-Type':  'application/json',
+      'Prefer':        'return=minimal',
+    },
+    body,
   }).catch(err => console.debug('[Tracking]', err))
   // console.debug is visible to devs in plugin console; invisible to designers.
-  // An empty url or unreachable endpoint is silently caught here.
 }

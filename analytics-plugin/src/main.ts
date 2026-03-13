@@ -1,8 +1,8 @@
 import type { EvaluationRow } from './types/analytics'
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config/tracking'
 
 const USE_MOCK = true
-const ANALYTICS_READ_URL = ''
-// To wire the real endpoint: set USE_MOCK = false and paste the PA Reader URL in ANALYTICS_READ_URL
+// To use real data: set USE_MOCK = false and fill SUPABASE_URL / SUPABASE_ANON_KEY in src/config/tracking.ts
 
 // Mock dataset: 10 rows, 4 designers, scores across all 3 bands, timestamps in last 4 weeks
 const MOCK_DATA: EvaluationRow[] = [
@@ -31,23 +31,31 @@ if (USE_MOCK) {
     }
   }, 1000)
 } else {
-  fetchEvaluations(ANALYTICS_READ_URL)
+  fetchEvaluations()
 }
 
-async function fetchEvaluations(url: string): Promise<void> {
+async function fetchEvaluations(): Promise<void> {
   try {
-    if (!url) throw new Error('ANALYTICS_READ_URL no configurado')
-    const res = await fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' } })
+    if (SUPABASE_URL === 'REPLACE_ME') throw new Error('SUPABASE_URL no configurado')
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/evaluations?select=*&order=timestamp.desc`,
+      {
+        method:  'GET',
+        headers: {
+          'apikey':        SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+      },
+    )
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    const json = await res.json()
-    const raw: unknown[] = Array.isArray(json) ? json : (json as { value?: unknown[] }).value ?? []
-    const rows: EvaluationRow[] = (raw as Record<string, unknown>[]).map((r) => ({
-      fileId: String(r['fileId'] ?? ''),
-      fileName: String(r['fileName'] ?? ''),
-      pageName: String(r['pageName'] ?? ''),
-      userName: String(r['userName'] ?? 'Unknown'),
-      overallScore: parseInt(String(r['overallScore']), 10) || 0,
-      timestamp: String(r['timestamp'] ?? ''),
+    const raw: Record<string, unknown>[] = await res.json()
+    const rows: EvaluationRow[] = raw.map((r) => ({
+      fileId:       String(r['file_id'] ?? ''),
+      fileName:     String(r['file_name'] ?? ''),
+      pageName:     '',
+      userName:     String(r['user_name'] ?? 'Unknown'),
+      overallScore: parseInt(String(r['overall_score']), 10) || 0,
+      timestamp:    String(r['timestamp'] ?? ''),
     }))
     figma.ui.postMessage(rows.length === 0
       ? { type: 'ANALYTICS_RESULT', data: [] }

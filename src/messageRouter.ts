@@ -4,7 +4,7 @@ import { evaluateCurrentPage } from './modules/handoff/evaluator/index'
 import { evaluateCopy } from './modules/copy/index'
 import { getUsersContext, requestUsersFeedback } from './modules/users/index'
 import { evaluateDS } from './modules/ds/index'
-import { buildPayload, fireAndForget, TRACKING_ENDPOINT_URL } from './modules/tracking/index'
+import { buildPayload, fireAndForget } from './modules/tracking/index'
 
 function send(msg: PluginMessage): void {
   figma.ui.postMessage(msg)
@@ -50,7 +50,7 @@ export function registerMessageRouter(): void {
           send({ type: 'HANDOFF_RESULT', report })
           // 2. Track silently — never blocks, never surfaces errors to designer
           const payload = buildPayload(report, figma.fileKey, figma.currentUser?.name)
-          fireAndForget(TRACKING_ENDPOINT_URL, payload)
+          fireAndForget(payload)
         } catch (err) {
           send({
             type: 'HANDOFF_ERROR',

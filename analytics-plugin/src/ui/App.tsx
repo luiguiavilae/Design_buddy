@@ -49,7 +49,7 @@ function ErrorView({ message }: { message: string }) {
       <p style={{ fontWeight: 600, color: '#1a1a2e', marginBottom: 6 }}>No se pudo cargar los datos</p>
       <p style={{ color: '#6b7280', fontSize: 11, marginBottom: 16 }}>{message}</p>
       <p style={{ color: '#9ca3af', fontSize: 10, lineHeight: 1.5 }}>
-        Verifica que <code>ANALYTICS_READ_URL</code> esté configurado en <code>analytics-plugin/src/main.ts</code> y que el flujo de Power Automate Reader esté activo.
+        Verifica que <code>SUPABASE_URL</code> y <code>SUPABASE_ANON_KEY</code> estén configurados en <code>analytics-plugin/src/config/tracking.ts</code>.
       </p>
     </div>
   )

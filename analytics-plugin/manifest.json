@@ -4,9 +4,11 @@
   "api": "1.0.0",
   "main": "dist/main.js",
   "ui": "dist/ui.html",
+  "editorType": ["figma"],
   "enablePrivatePluginApi": true,
   "permissions": ["currentuser"],
   "networkAccess": {
-    "allowedDomains": ["*.api.powerplatform.com"]
+    "allowedDomains": ["*.supabase.co"],
+    "reasoning": "El plugin lee datos de evaluaciones desde Supabase REST API."
   }
 }
