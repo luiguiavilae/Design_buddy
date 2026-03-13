@@ -3,6 +3,7 @@ import type { ProjectConfig } from './docs'
 import type { EvaluationReport } from './handoff'
 import type { CopyReport } from './copy'
 import type { UsersReport, UsersRequest } from './users'
+import type { DSReport } from './ds'
 
 // ── UI → Plugin ───────────────────────────────────────────────────────────────
 export type UIMessage =
@@ -17,6 +18,8 @@ export type UIMessage =
   // Users
   | { type: 'USERS_GET_CONTEXT' }
   | { type: 'USERS_REQUEST_FEEDBACK'; payload: UsersRequest }
+  // DS
+  | { type: 'DS_START_EVALUATION' }
   // General
   | { type: 'CLOSE' }
 
@@ -39,3 +42,7 @@ export type PluginMessage =
   | { type: 'USERS_RESULT'; report: UsersReport }
   | { type: 'USERS_ERROR'; error: string }
   | { type: 'USERS_PROGRESS'; step: string; percent: number }
+  // DS
+  | { type: 'DS_PROGRESS'; step: string; percent: number }
+  | { type: 'DS_RESULT'; report: DSReport }
+  | { type: 'DS_ERROR'; error: string }

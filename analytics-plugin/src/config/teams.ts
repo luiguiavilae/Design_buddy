@@ -2,7 +2,7 @@
 // Los nombres deben coincidir exactamente con como aparecen en Figma.
 // Para agregar o mover diseñadores: editar esta lista y rebuildar.
 export const TEAMS: Record<string, string[]> = {
-  'Luigui Avila Estrada': [
+  'Luigui Alberto Avila Estrada': [
     'Alfredo Vásquez',
     'Andrea Jimenez',
     'Benjamín García',

@@ -3,8 +3,9 @@ import DocsTab from './tabs/DocsTab'
 import CopyTab from './tabs/CopyTab'
 import UsersTab from './tabs/UsersTab'
 import HandoffTab from './tabs/HandoffTab'
+import DSTab from './tabs/DSTab'
 
-type Tab = 'docs' | 'copy' | 'users' | 'handoff'
+type Tab = 'docs' | 'copy' | 'users' | 'handoff' | 'ds'
 
 interface TabConfig {
   id: Tab
@@ -17,6 +18,7 @@ const TABS: TabConfig[] = [
   { id: 'copy',    label: 'Copy',    icon: '✍️' },
   { id: 'users',   label: 'Users',   icon: '👥' },
   { id: 'handoff', label: 'Handoff', icon: '🚀' },
+  { id: 'ds',      label: 'DS',      icon: '🧩' },
 ]
 
 export default function App() {
@@ -495,6 +497,14 @@ export default function App() {
         .issue-consistencia { background: #ede9fe; color: #5b21b6; }
         .issue-voz_marca    { background: #fef3c7; color: #78350f; }
 
+        /* ── DS issue badges ── */
+        .issue-ds-broken_component   { background: #fee2e2; color: #991b1b; }
+        .issue-ds-local_component    { background: #ffedd5; color: #9a3412; }
+        .issue-ds-detached_component { background: #fef9c3; color: #854d0e; }
+        .issue-ds-hardcoded_fill     { background: #fef9c3; color: #854d0e; }
+        .issue-ds-hardcoded_text     { background: #fef9c3; color: #854d0e; }
+        .issue-ds-visual_override    { background: #dbeafe; color: #1e40af; }
+
         /* ── Spinner ── */
         @keyframes spin { to { transform: rotate(360deg); } }
         .spinner {
@@ -555,6 +565,7 @@ export default function App() {
         {activeTab === 'copy'    && <CopyTab />}
         {activeTab === 'users'   && <UsersTab />}
         {activeTab === 'handoff' && <HandoffTab />}
+        {activeTab === 'ds'      && <DSTab />}
       </div>
     </>
   )

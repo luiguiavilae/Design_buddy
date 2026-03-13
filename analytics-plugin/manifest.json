@@ -8,7 +8,7 @@
   "enablePrivatePluginApi": true,
   "permissions": ["currentuser"],
   "networkAccess": {
-    "allowedDomains": ["*.supabase.co"],
+    "allowedDomains": ["https://*.supabase.co"],
     "reasoning": "El plugin lee datos de evaluaciones desde Supabase REST API."
   }
 }

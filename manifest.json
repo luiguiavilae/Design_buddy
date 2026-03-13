@@ -11,7 +11,7 @@
   "networkAccess": {
     "allowedDomains": [
       "https://api.groq.com",
-      "*.supabase.co"
+      "https://*.supabase.co"
     ],
     "reasoning": "El plugin envía datos de evaluación de handoff a Supabase REST API y realiza llamadas a la API de Groq para el módulo de usuarios."
   }
