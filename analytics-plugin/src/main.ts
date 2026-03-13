@@ -1,7 +1,8 @@
 import type { EvaluationRow } from './types/analytics'
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config/tracking'
+import { TEAMS } from './config/teams'
 
-const USE_MOCK = true
+const USE_MOCK = false
 // To use real data: set USE_MOCK = false and fill SUPABASE_URL / SUPABASE_ANON_KEY in src/config/tracking.ts
 
 // Mock dataset: 10 rows, 4 designers, scores across all 3 bands, timestamps in last 4 weeks
@@ -31,14 +32,21 @@ if (USE_MOCK) {
     }
   }, 1000)
 } else {
-  fetchEvaluations()
+  const leaderName = figma.currentUser?.name ?? ''
+  const designers = TEAMS[leaderName]
+  if (!designers || designers.length === 0) {
+    figma.ui.postMessage({ type: 'ANALYTICS_ERROR', message: `Tu usuario (${leaderName || 'desconocido'}) no está configurado como líder.` })
+  } else {
+    fetchEvaluations(designers)
+  }
 }
 
-async function fetchEvaluations(): Promise<void> {
+async function fetchEvaluations(designers: string[]): Promise<void> {
   try {
     if (SUPABASE_URL === 'REPLACE_ME') throw new Error('SUPABASE_URL no configurado')
+    const filter = encodeURIComponent(`in.(${designers.join(',')})`)
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/evaluations?select=*&order=timestamp.desc`,
+      `${SUPABASE_URL}/rest/v1/evaluations?select=*&order=timestamp.desc&user_name=${filter}`,
       {
         method:  'GET',
         headers: {
